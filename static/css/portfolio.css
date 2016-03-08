@@ -1,29 +1,4 @@
-.header-logo {
-    width: 100px;
-    height: auto;
-    
-}
-
-.jumbotron {
-    background-image: url(../images/header.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 350px;
-    width: 100%;
-    color: #fff;
-}
-
-hr {
-    border-top: 3px solid #999;
-}
-
-.box-shadow {
-    -webkit-box-shadow: 3px 7px 24px -2px rgba(0,0,0,0.75);
-    -moz-box-shadow: 3px 7px 24px -2px rgba(0,0,0,0.75);
-    box-shadow: 3px 7px 24px -2px rgba(0,0,0,0.75);
-}
-
+/* Page Loading overlay */
 .loading-page {
 	position: fixed;
 	left: 0px;
@@ -34,11 +9,73 @@ hr {
 	background: url(../images/Preloader_9.gif) center no-repeat #fff;
 }
 
-#fade-div {
-    background-color: lightgreen !important;
-    opacity: 0;
+
+/* Header Bar*/
+.header-logo {
+    width: 100px;
+    height: auto;
+    
+}
+.name {
+    font-size: 32px;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
+.speciality {
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: capitalize;
+}
+
+
+/* Opening Image and text */
+.jumbotron {
+    background-image: url(../images/header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
+    width: 100%;
+    color: #fff;
+    position: relative;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.4;
+}
+
+.text-container {
+    z-index: 500;
+    text-align: center;
+    padding: 5px;
+}
+
+.img-text {
+    text-shadow: 1px 2px #000;
+    color: #fff !important;
+    z-index: 500;
+}
+
+/* Misc Additional style */
+hr {
+    border-top: 3px solid #999;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 3px 7px 24px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 7px 24px -2px rgba(0,0,0,0.75);
+    box-shadow: 3px 7px 24px -2px rgba(0,0,0,0.75);
+}
+
+
+
+/* Featured Work Section */
 .feature:hover {
     box-shadow: 1px 2px 2px 5px #ccc;
 }
@@ -61,3 +98,5 @@ hr {
     display: block;
     background: rgba(0, 0, 0, .6);
 }
+
+
