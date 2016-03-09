@@ -1,110 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NAd | Developer</title>
-    <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative:700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>    
-    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="static/bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="static/css/portfolio.css">
-    
-</head>
-<body style="margin-top: 20px;">
-   
-   <div class="loading-page"></div>
-   
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-4">
-                <img src="static/images/logo.png" alt="ND Logo" class="header-logo">
-            </div>
-            <div class="col-xs-8 text-right">
-                <div class="row text-right">
-                    <span class="name">Nick Daniel</span>
+<html lang="en" ng-app="portfolio" ng-controller="MainCtrl as main">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>NAd | Developer</title>
+        <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative:700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>    
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+        <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="static/bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css"/>
+        <link rel="stylesheet" href="static/css/portfolio.css">
+    </head>
+    <body>
+        <!-- Page Load gif and overlay -->
+       <div class="loading-page"></div>
+         <md-toolbar>
+               <div flex><span class="name">Nick Daniel</span></div>
+           </md-toolbar>
+        <div class=" md-margin md-padding">
+            <div layout>
+                <div flex>
+                    <img src="static/images/logo.png" alt="ND Logo" class="header-logo">
                 </div>
-                <div class="row text-right">
-                    <span class="speciality">front-end developer</span>
+                <div flex layout="column" layout-align="end end">
+                    <div flex>
+                        <span class="md-headline name">Nick Daniel</span>
+                    </div>
+                    <div flex>
+                        <span class="speciality">front-end developer</span>
+                    </div>
                 </div>
             </div>
-            <div class="col-xs-12">
-                <hr class="box-shadow">
+            <div  layout>
+                    <div flex>
+                        <hr class="box-shadow">
+                    </div>
+                </div>
+            <div layout>
+                <div class="jumbotron">
+                  <div class="container">
+                    <div id="overlay"></div>
+                    <div flex class="text-container">
+                        <h1 class="img-text">Walk with me</h1>
+                        <h3 class="img-text">across</h3>
+                        <h3 class="img-text">the bridge to <strong>SUCCESS...</strong></h3>
+                     </div>
+                  </div>
+                </div>
+            </div>
+            <div layout>
+                <div flex class="text-center">
+                    <h1 class="md-headline">Featured Work</h1>
+                    <hr>
+                </div>
+            </div>
+            <div layout-lg="row" layout-md="row" layout-sm="column">
+               <md-whiteframe flex class="md-whiteframe-6dp md-margin md-padding">
+                  <div flex>
+                       <img src="static/images/legaltec-dashboard.png" alt="Legaltec Dashboard" width="350px">
+                  </div>
+                <div flex>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti laboriosam nostrum, blanditiis vero neque pariatur doloribus quibusdam impedit, nam soluta magnam sunt natus fugiat ducimus expedita tempora amet aut assumenda?
+                </div>
+               </md-whiteframe>
+               <md-whiteframe flex class="md-whiteframe-6dp md-margin md-padding">
+                   <img src="static/images/legaltec-dashboard.png" alt="Legaltec Dashboard" width="350px">
+               </md-whiteframe>
+               <md-whiteframe flex class="md-whiteframe-6dp md-margin md-padding">
+                   <img src="static/images/legaltec-dashboard.png" alt="Legaltec Dashboard" width="350px">
+               </md-whiteframe>
+            </div>
+            <div layout>
+                    <md-card flex>
+                        <nvd3 options="options" data="data"></nvd3>
+                    </md-card>
             </div>
         </div>
-        <div class="row">
-            <div class="jumbotron">
-              <div class="container">
-                <div id="overlay"></div>
-                <div class="col-xs-12 text-container">
-                    <h1 class="img-text">Walk with me</h1>
-                    <h3 class="img-text">across</h3>
-                    <h3 class="img-text">the bridge to <strong>SUCCESS...</strong></h3>
-                 </div>
-              </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <h1>Featured Work</h1>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" >
-                <div class="panel panel-default feature">
-                    <div class="panel-body">
-                        <img src="static/images/legaltec-dashboard.png" alt="Legaltec Dashboard" width="100%">
+    </body>
+    <!--body>
+       <div class="loading-page"></div>
+            <md-toolbar class="md-padding">
+                <div layout>
+                    <div flex>
+                        <img src="static/images/logo.png" alt="ND Logo" class="header-logo">
                     </div>
-                    <div class="panel-footer">
-                        <div class="row">
-                            <div class="text-center">
-                                <h3>LegalTec</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur impedit iste, neque quaerat et debitis ratione aspernatur quis maxime magnam nam similique, assumenda eveniet qui eligendi, voluptas, suscipit ipsum.</p>
-                            </div>
-                        
-                        </div>
+                    <div flex layout="column" layout-align="end end">
+                        <div flex><span class="md-headline name">Nick Daniel</span></div>
+                        <div flex><span class="md-subhead speciality">Front-End Developer</span></div>
                     </div>
-                </div>  
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-               <div class="panel panel-default feature">
-                    <div class="panel-body">
-                        <img src="static/images/legaltec-dashboard.png" alt="Legaltec Dashboard" width="100%">
-                    </div>
-                    <div class="panel-footer">
-                        <div class="row">
-                            <div class="text-center">
-                                <h3>LegalTec</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur impedit iste, neque quaerat et debitis ratione aspernatur quis maxime magnam nam similique, assumenda eveniet qui eligendi, voluptas, suscipit ipsum.</p>
-                            </div>
-                        
-                        </div>
-                    </div>
-                </div>  
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="panel panel-default feature">
-                    <div class="panel-body">
-                        <img src="static/images/legaltec-dashboard.png" alt="Legaltec Dashboard" width="100%">
-                    </div>
-                    <div class="panel-footer">
-                        <div class="row">
-                            <div class="text-center">
-                                <h3>LegalTec</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur impedit iste, neque quaerat et debitis ratione aspernatur quis maxime magnam nam similique, assumenda eveniet qui eligendi, voluptas, suscipit ipsum.</p>
-                            </div>
-                        
-                        </div>
-                    </div>
-                </div>  
-            </div>
-        </div>
-    </div>
-</body>
-<script src="static/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="static/js/portfolio.js"></script>
-
-
+                </div>
+            </md-toolbar>
+    </body-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+        <script src="https://rawgit.com/krispo/angular-nvd3/v1.0.5/dist/angular-nvd3.js"></script>
+        <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="static/js/app.js"></script>
+        <script src="static/js/portfolio.js"></script>
 </html>
