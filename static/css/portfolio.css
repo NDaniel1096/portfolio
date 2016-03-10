@@ -29,7 +29,7 @@
 
 
 /* Opening Image and text */
-.jumbotron {
+.opening-image {
     background-image: url(../images/header.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -38,6 +38,7 @@
     width: 100%;
     color: #fff;
     position: relative;
+    border-radius: 8px;
 }
 
 #overlay {
@@ -48,6 +49,7 @@
     height: 100%;
     background-color: black;
     opacity: 0.4;
+    border-radius: 8px;
 }
 
 .text-container {

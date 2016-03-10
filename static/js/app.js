@@ -2,14 +2,15 @@ var app = angular.module('portfolio',
      [
         'ngMaterial',
         'nvd3',
+        'duScroll'
 
     ]
 );
 
 app.config(function($mdThemingProvider){
     $mdThemingProvider.theme('default')
-        .primaryPalette('blue')
-        .accentPalette('red');
+        .primaryPalette('indigo')
+        .accentPalette('blue');
 });
 
 app.service('MainService', function(){
@@ -17,61 +18,29 @@ app.service('MainService', function(){
     
 });
 
-app.controller('MainCtrl', function(MainService, $scope){
+app.controller('MainCtrl', function(MainService, $scope, $mdDialog){
     var vm = this;
-    $scope.options = {
-            chart: {
-                type: 'pieChart',
-                height: 450,
-                donut: true,
-                x: function(d){return d.key;},
-                y: function(d){return d.y;},
-                showLabels: true,
-
-                pie: {
-                    startAngle: function(d) { return d.startAngle/2 -Math.PI/2 },
-                    endAngle: function(d) { return d.endAngle/2 -Math.PI/2 }
-                },
-                duration: 500,
-                legend: {
-                    margin: {
-                        top: 5,
-                        right: 70,
-                        bottom: 5,
-                        left: 0
-                    }
-                }
-            }
-        };
-
-        $scope.data = [
-            {
-                key: "One",
-                y: 5
-            },
-            {
-                key: "Two",
-                y: 2
-            },
-            {
-                key: "Three",
-                y: 9
-            },
-            {
-                key: "Four",
-                y: 7
-            },
-            {
-                key: "Five",
-                y: 4
-            },
-            {
-                key: "Six",
-                y: 3
-            },
-            {
-                key: "Seven",
-                y: .5
-            }
-        ];
+    vm.imagePath = 'static/images/legaltec-dashboard.png'
+    vm.learnMore1 = function(){ 
+        var options = {};
+        options.template = 
+            '<md-dialog style="min-width: 200px;">'+
+            '   <md-toolbar layout layout-align="center center" class="md-padding"><div flex>Project Info</div></md-toolbar>' +
+            '       <md-content class="md-padding">' +
+            '           <h1>Lorem</h1>'+
+            '               <p>Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where to Find Them. Bee in your bonnet Hand of Glory elder wand, spectacles House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning spells tap-dancing spider Slytherin’s Heir mewing kittens Remus Lupin. Palominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma and Parvati Sorting Hat Minister of Magic blue turban remember my last. </p>'+
+            '        </ md-content>'+
+            ' <div layout><md-button class="md-raised" ng-click="">Got it!</md-button></div>'+
+            '</md-dialog>';
+        options.clickOutsideToClose = true;
+        $mdDialog.show(options); 
+    };
+    
+    vm.featuredWork = [
+        { title : 'Project 1', image : 'static/images/city-cars-traffic-lights.jpg'},
+        { title : 'Project 2', image : 'static/images/person-apple-laptop-notebook.jpg'},
+        { title : 'Project 3', image : 'static/images/header-bg.jpg'},
+        
+    ];
 });
+
