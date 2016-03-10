@@ -17,12 +17,12 @@
     
 }
 .name {
-    font-size: 32px;
+    font-size: 24px;
     font-family: 'Cinzel Decorative', cursive;
 }
 
 .speciality {
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Orbitron', sans-serif;
     text-transform: capitalize;
 }
