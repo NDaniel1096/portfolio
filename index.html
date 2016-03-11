@@ -19,7 +19,7 @@
                <div flex>
                    <img src="static/images/logo.png" alt="ND Logo" class="header-logo">
                </div>
-                <div flex layout-align="center center" hide-xs>
+                <div flex layout-align="center center" hide-xs ng-show="{{name.length > 3}}">
                     <md-button class="md-primary" aria-label="Featured Work" href="#featured" du-smooth-scroll du-scrollspy>
                       Featured Work
                     </md-button>
@@ -43,7 +43,7 @@
                  
            </md-toolbar>
         <div class="md-margin md-padding">
-               <div flex="40">
+               <div flex-gt-sm="40">
                    <md-input-container class="md-block">
                        <label>Start Here by entering your Name</label>
                        <input ng-model="name">
