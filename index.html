@@ -15,17 +15,44 @@
     <body>
         <!-- Page Load gif and overlay -->
        <div class="loading-page"></div>
-         <md-toolbar>
-                <div class="md-toolbar-tools md-padding">
+         <md-toolbar layout class="md-padding">
+               <div flex>
+                   <img src="static/images/logo.png" alt="ND Logo" class="header-logo">
+               </div>
+                <div flex layout-align="center center" hide-xs>
                     <md-button class="md-primary" aria-label="Featured Work" href="#featured" du-smooth-scroll du-scrollspy>
                       Featured Work
                     </md-button>
                  </div>
+                 <div flex layout="column" layout-align="end center" hide-xs>
+                        <div flex>
+                            <span class="md-headline name">Nick Daniel</span>
+                        </div>
+                        <div flex>
+                            <span class="speciality">front-end developer</span>
+                        </div>
+                 </div>
+                 <div flex layout="column" layout-align="end center"  hide-gt-xs>
+                        <div flex>
+                            <span class="md-title">Nick Daniel</span>
+                        </div>
+                        <div flex>
+                            <span class="md-subhead">front-end developer</span>
+                        </div>
+                 </div>
+                 
            </md-toolbar>
         <div class="md-margin md-padding">
-            <div layout>
+               <div flex="40">
+                   <md-input-container class="md-block">
+                       <label>Start Here by entering your Name</label>
+                       <input ng-model="name">
+                  </md-input-container>
+               </div>
+            <md-content ng-show="name.length > 3">
+                <div layout>
                 <div flex>
-                    <img src="static/images/logo.png" alt="ND Logo" class="header-logo">
+                    
                 </div>
                 <div flex layout="column" layout-align="end end">
                     <div flex>
@@ -45,36 +72,39 @@
                 <div id="overlay"></div>
                     <div layout layout-align="center center" class="md-padding">
                         <div flex class="text-container">
-                            <h1 class="img-text">Walk with me</h1>
-                            <h3 class="img-text">across</h3>
-                            <h3 class="img-text">the bridge to <strong>SUCCESS...</strong></h3>
+                            <h1 class="img-text">Welcome <span>{{name}}</span>,</h1>
+                            <h3 class="img-text">to my Portfolio</h3>
                          </div>
                     </div>
             </section>
-                <div layout>
+               <md-content>
+                   <div layout>
                     <div flex class="text-center" id="featured">
                         <h1 class="md-headline">Featured Work</h1>
                             <md-divider></md-divider>
                     </div>
                 </div>
-            <section layout-lg="row" layout-md="row" layout-sm="column">
-                <md-card flex ng-repeat="item in main.featuredWork">
-                    <div flex class="text-center">
-                       <span class="md-headline">{{ item.title }}</span>
-                    </div>
-                    <div flex class="md-padding">
-                        <img ng-src="{{item.image}}" class=" img-responsive" alt="Washed Out">
-                    </div>
-                    <md-card-actions layout="row" layout-align="end center">
-                        <md-button class="md-raised md-accent" aria-label="Learn More" ng-click="main.learnMore1()">
-                          learn more
-                        </md-button>
-                        <md-button class="md-raised md-accent" aria-label="Learn More" ng-click="main.learnMore1()">
-                              learn more
-                        </md-button>
-                    </md-card-actions>
-                </md-card>
-            </section>
+                    <section layout-lg="row" layout-md="row" layout-sm="column">
+                        <md-card flex ng-repeat="item in main.featuredWork">
+                            <div flex class="text-center">
+                               <span class="md-headline">{{ item.title }}</span>
+                            </div>
+                            <div flex class="md-padding">
+                                <img ng-src="{{item.image}}" class=" img-responsive" alt="Washed Out">
+                            </div>
+                            <md-card-actions layout="row" layout-align="end center">
+                                <md-button class="md-raised md-accent" aria-label="Learn More" ng-click="main.learnMore1()">
+                                  learn more
+                                </md-button>
+                                <md-button class="md-raised md-accent" aria-label="Learn More" ng-click="main.learnMore1()">
+                                      learn more
+                                </md-button>
+                            </md-card-actions>
+                        </md-card>
+                    </section>
+               </md-content>
+            </md-content>
+                
         </div>
     </body>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
