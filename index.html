@@ -19,9 +19,12 @@
                <div flex>
                    <img src="static/images/logo.png" alt="ND Logo" class="header-logo">
                </div>
-                <div flex layout-align="center center" hide-xs ng-show="name.length >= 3">
+                <div flex layout-align="center center" hide-xs hide-sm ng-show="name.length >= 3">
                     <md-button class="md-primary" aria-label="Featured Work" href="#featured" du-smooth-scroll du-scrollspy>
                       Featured Work
+                    </md-button>
+                    <md-button class="md-primary" aria-label="Network" href="#networks" du-smooth-scroll du-scrollspy>
+                      Connect with Me
                     </md-button>
                  </div>
                  <div flex layout="column" layout-align="end center" hide-xs>
@@ -90,19 +93,22 @@
                             </md-card>
                         </section>
                    </md-content>
-                   <div layoyt>
-                      <div flex class="text-center">
+                   <section id="networks" class="text-center">
+                      <div flex="100" layout layout-align="center center" class="md-padding">
                           <h3 class="md-headline">
                               {{name}}, Follow and Connect with me!
                           </h3>
+                      </div>
+                      <div flex>
                           <md-divider></md-divider>
                       </div>
-                       <div flex layout class="md-padding">
-                           <md-button href="https://www.linkedin.com/in/nickdaniel" target="_blank"><i class="fa fa-linkedin fa-2x"></i></md-button>
-                           <md-button href="https://www.facebook.com/profile.php?id=100008306421574" target="_blank"><i class="fa fa-facebook fa-2x"></i></md-button>
+                       <div flex layout layout-align="center center" class="md-padding">
+                          
+                           <md-button href="https://www.linkedin.com/in/nickdaniel" target="_blank"><i class="fa fa-linkedin fa-2x"></i></md-button><md-divider></md-divider>
+                           <md-button href="https://www.facebook.com/profile.php?id=100008306421574" target="_blank"><i class="fa fa-facebook fa-2x"></i></md-button><md-divider></md-divider>
                            <md-button href="https://plus.google.com/u/0/100856018217564920599" target="_blank"><i class="fa fa-google-plus fa-2x"></i></md-button>
                        </div>
-                   </div>
+                   </section>
             </md-content>    
         </div>
     </body>
