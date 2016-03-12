@@ -19,7 +19,7 @@
                <div flex>
                    <img src="static/images/logo.png" alt="ND Logo" class="header-logo">
                </div>
-                <div flex layout-align="center center" hide-xs ng-show="{{name.length > 3}}">
+                <div flex layout-align="center center" hide-xs ng-show="{{name.length >= 3}}">
                     <md-button class="md-primary" aria-label="Featured Work" href="#featured" du-smooth-scroll du-scrollspy>
                       Featured Work
                     </md-button>
@@ -49,7 +49,7 @@
                        <input ng-model="name">
                   </md-input-container>
                </div>
-            <md-content ng-show="name.length > 3">
+            <md-content ng-show="name.length >= 3">
                 <div layout>
                 <div flex>
                     
