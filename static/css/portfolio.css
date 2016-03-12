@@ -41,6 +41,10 @@
     border-radius: 8px;
 }
 
+.bg-lite {
+    background-color: #dedede;
+}
+
 #overlay {
     position: absolute;
     top: 0;
@@ -69,6 +73,9 @@ hr {
     border-top: 3px solid #999;
 }
 
+.top-3 {
+    margin-top: 3em;
+}
 .box-shadow {
     -webkit-box-shadow: 3px 7px 24px -2px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 7px 24px -2px rgba(0,0,0,0.75);
